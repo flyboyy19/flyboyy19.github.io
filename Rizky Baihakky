@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERKENALAN HTML</title>
+    <style>
+        body {
+            position: relative; /* Set relative positioning for the body */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh; /* Full height of the viewport */
+            display: flex; /* Flexbox layout for centering */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center elements horizontally */
+            justify-content: center; /* Center elements vertically */
+        }
+
+        img {
+            display: block;
+            margin: 30px auto; /* Centering the image */
+            border-radius: 50%; /* Making the image round */
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgb(1, 2, 2);
+            color: rgb(253, 253, 253);
+            margin: 10px 0; /* Adding margin to separate headings */
+        }
+
+        address {
+            display: block;
+            text-align: center;
+        }
+
+        .profile-date {
+            position: absolute; /* Absolute positioning */
+            bottom: 20px; /* 20 pixels from the bottom */
+            right: 20px; /* 20 pixels from the right */
+            text-align: right; /* Align text to the right */
+            color: #666; /* Optional: color for the date and time */
+        }
+    </style>
+</head>
+<body>
+    <img src="c:\Users\kiki\Pictures\Gambar WhatsApp 2024-09-28 pukul 15.15.00_835f2dc8.jpg" alt="profile" style="width:128px;height:128px">
+    <h1>RIZKY BAIHAKKY</h1>
+    <h1>1202223248</h1>
+    <a href=https://www.instagram.com/kiki.baihaky?igsh=cnZmNmVocGY2em04>
+        <img src="c:\Users\kiki\Downloads\download (1).jpeg" alt="instagram" style="width:42px;height:42px;">
+    </a>
+    
+    <div class="profile-date" id="date-time">
+        <!-- Date and time will be displayed here -->
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true, 
+                timeZone: 'Asia/Jakarta' // Set timezone to Indonesia
+            };
+            const formattedTime = new Intl.DateTimeFormat('en-US', options).format(now);
+            document.getElementById('date-time').textContent = formattedTime;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+        
+        // Initial call to display time immediately
+        updateTime();
+    </script>
+
+</body>
+</html>
